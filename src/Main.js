@@ -36,7 +36,7 @@ function Main(){
   }
   useEffect(() => {
     getImages(url);
-  }, [url]);
+  }, []);
   console.log(images);
 
   return (
