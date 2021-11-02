@@ -6,6 +6,9 @@
   .block1 {
     @apply bg-white shadow rounded-lg p-4 mb-8;
   }
+  .header_nav_item {
+    @apply border rounded p-2 lg:mr-2 mb-2 lg:mb-0;
+  }
 }
 
 body {
