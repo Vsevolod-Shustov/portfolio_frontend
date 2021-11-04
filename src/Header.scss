@@ -1,0 +1,29 @@
+.navbar {
+  background-color: white;
+}
+
+
+
+@media (max-width:1023px) {
+  .navbar {
+    overflow:hidden;
+    &.open {
+      height: auto;
+      margin-top: 1rem;
+    }
+    &.closed {
+      height:0;
+      margin-top:0;
+    }
+  }
+
+  .navbar_mobile_toggle {
+    font-size:40px;
+    font-weight:bold;
+    height:50px;
+    width:50px;
+    line-height:23px;
+    display: flex;
+    justify-content: center;
+  }
+}
