@@ -11,22 +11,25 @@ function ImageGrid(){
   const dispatch = useDispatch();
 
   function getImages(url) {
-    console.log("fetching");
+    //console.log("fetching");
     fetch(url)
     .then(function(response){
-      console.log("response: " + response);
+      //console.log("response: " + response);
       return response.json();
     })
     .then(json => {
       //setImages(json);
-      console.log("json: " + JSON.stringify(json));
-      console.log("dispatching");
+      //console.log("json: " + JSON.stringify(json));
+      //console.log("dispatching");
       dispatch(set(json));
     });
   }
 
   function mapImages(images){
+    //console.log("mapImages");
     if(images){
+      //console.log("images:");
+      //console.log(images);
       return images.map((image) =>
         <div className={styles.imagewrapper + " w-full"} key={image.id}>
           <div className={styles.image + " rounded"} style={{backgroundImage: 'url(' + image.url + ')'}}></div>
@@ -34,10 +37,10 @@ function ImageGrid(){
       );
     }
   }
+
   useEffect(() => {
     getImages(url);
   }, []);
-  console.log(images);
 
   return (
     <>
