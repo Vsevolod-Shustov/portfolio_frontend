@@ -1,10 +1,10 @@
 import React from 'react';
-import useImageLoader from './useImageLoader.js';
+
 import { useSelector } from 'react-redux';
 import styles from './ImageGrid.scss';
 
 function ImageGrid(){
-  useImageLoader();
+
   const images = useSelector((state) => state.catimages.images);
 
 
@@ -22,9 +22,9 @@ function ImageGrid(){
   }
 
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 auto-rows-fr">
       {mapImages(images)}
-    </>
+    </div>
   )
 }
 
