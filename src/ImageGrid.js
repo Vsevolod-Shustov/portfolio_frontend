@@ -1,29 +1,12 @@
-import React, {/*useState, */useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import { set } from './catimagesSlice'
+import React from 'react';
+import useImageLoader from './useImageLoader.js';
+import { useSelector } from 'react-redux';
 import styles from './ImageGrid.scss';
 
 function ImageGrid(){
-  const url = "https://api.thecatapi.com/v1/images/search?mime_types=jpg&limit=12";
-  //const [images, setImages] = useState(null);
-
+  useImageLoader();
   const images = useSelector((state) => state.catimages.images);
-  const dispatch = useDispatch();
 
-  function getImages(url) {
-    //console.log("fetching");
-    fetch(url)
-    .then(function(response){
-      //console.log("response: " + response);
-      return response.json();
-    })
-    .then(json => {
-      //setImages(json);
-      //console.log("json: " + JSON.stringify(json));
-      //console.log("dispatching");
-      dispatch(set(json));
-    });
-  }
 
   function mapImages(images){
     //console.log("mapImages");
@@ -37,10 +20,6 @@ function ImageGrid(){
       );
     }
   }
-
-  useEffect(() => {
-    getImages(url);
-  }, []);
 
   return (
     <>

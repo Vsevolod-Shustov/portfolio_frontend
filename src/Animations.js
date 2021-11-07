@@ -5,6 +5,8 @@ function Animations(){
   return (
     <>
       Animations
+
+
     </>
   )
 }
